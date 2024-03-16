@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 
-class RegisterPage extends StatelessWidget {
-  const RegisterPage({super.key});
+class StartPage extends StatelessWidget {
+  const StartPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Register Page'),
+          title: const Text('Start Page'),
         ),
         body: const Center(
           child: Text('Hello World'),
         ),
-      
     );
   }
 }

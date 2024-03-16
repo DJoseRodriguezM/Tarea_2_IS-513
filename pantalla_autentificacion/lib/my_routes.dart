@@ -1,7 +1,6 @@
 enum MyRoutes {
   home,
-  details,
-  products,
-  productDetails,
-  inputs,
+  login,
+  register,
+  start,
 }
