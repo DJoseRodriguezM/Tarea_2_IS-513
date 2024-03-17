@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pantalla_autentificacion/login_page.dart';
+import 'package:pantalla_autentificacion/my_router.dart';
+import 'package:pantalla_autentificacion/my_routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,8 +14,52 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Autenticación',
-      home: LoginPage(),
+      initialRoute: MyRoutes.login.name,
+      routes: routes,
+      onGenerateRoute: (settings){
+        return MaterialPageRoute(
+          builder: (context) => PageNotFound(name: settings.name),
+        );
+      },      
+    );
+  }
+}
+
+
+class PageNotFound extends StatelessWidget {
+  const PageNotFound({super.key, required this.name});
+
+  final String? name;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('La ruta $name no existe'),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.black,
+                  foregroundColor: Colors.white,
+                  minimumSize: const Size(double.infinity, 50), 
+                  shape: RoundedRectangleBorder( 
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, MyRoutes.login.name);
+                },
+                child: const Text('Ir a la página principal'),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:pantalla_autentificacion/my_routes.dart';
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
 
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+
+  // final String? name;
 
   @override
   Widget build(BuildContext context){
@@ -55,7 +58,7 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-
+                
               },
               child: const Text('Iniciar sesión'),
             ),
@@ -71,7 +74,7 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-
+                Navigator.pushNamed(context, MyRoutes.register.name);
               },
               child: const Text('Registrarse'),
             ),
