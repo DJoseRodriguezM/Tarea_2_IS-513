@@ -6,6 +6,6 @@ import 'package:pantalla_autentificacion/start_page.dart';
 
 final Map<String, Widget Function(BuildContext)> routes = {
   MyRoutes.login.name: (context) => LoginPage(),
-  MyRoutes.register.name: (context) => const RegisterPage(),
-  MyRoutes.start.name: (context) => const StartPage(),
+  MyRoutes.register.name: (context) => RegisterPage(),
+  MyRoutes.start.name: (context) => StartPage(),
 };
