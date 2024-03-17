@@ -5,7 +5,7 @@ import 'package:pantalla_autentificacion/my_routes.dart';
 import 'package:pantalla_autentificacion/start_page.dart';
 
 final Map<String, Widget Function(BuildContext)> routes = {
-  MyRoutes.login.name: (context) => LoginPage(),
+  MyRoutes.login.name: (context) => const LoginPage(key: Key('LoginPageState')),
   MyRoutes.register.name: (context) => RegisterPage(),
-  MyRoutes.start.name: (context) => StartPage(),
+  MyRoutes.start.name: (context) => const StartPage(),
 };
