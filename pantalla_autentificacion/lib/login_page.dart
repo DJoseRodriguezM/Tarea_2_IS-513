@@ -6,8 +6,6 @@ class LoginPage extends StatelessWidget {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
-  // final String? name;
-
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -16,7 +14,8 @@ class LoginPage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
+        child: SingleChildScrollView(
+          child: Column(
           children: [
             const SizedBox(height: 20),
             Image.asset(
@@ -58,7 +57,28 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-                
+                String email = emailController.text;
+                String password = passwordController.text;
+
+                if ((email == 'dj.rodriguez@unah.hn' && password == '20222000953') || (email == 'cpenap@unah.hn' && password == '20222001004')) {
+                  Navigator.pushNamed(context, MyRoutes.start.name);
+                } else {
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: const Text('Error'),
+                      content: const Text('Credenciales incorrectas'),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Text('OK'),
+                        ),
+                      ],
+                    ),
+                  );
+                }
               },
               child: const Text('Iniciar sesión'),
             ),
@@ -79,6 +99,7 @@ class LoginPage extends StatelessWidget {
               child: const Text('Registrarse'),
             ),
           ],  
+        ),
         ),
       )
     );
