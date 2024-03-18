@@ -89,7 +89,7 @@ class RegisterPageState extends State<RegisterPage> {
                   TextFormField(
                     controller: passwordController,
                     maxLength: 25,
-                    obscureText: true,
+                    obscureText: !isPasswordVisible,
                     validator: (value){
                       if (value!.isEmpty) return 'La contraseña es obligatoria';
 
@@ -115,7 +115,7 @@ class RegisterPageState extends State<RegisterPage> {
                   TextFormField(
                     controller: passwordconfirmController,
                     maxLength: 25,
-                    obscureText: true,
+                    obscureText: !isPasswordVisible,
                     validator: (value){
                       if (value!.isEmpty) return 'La confirmación de contraseña es obligatoria';
 

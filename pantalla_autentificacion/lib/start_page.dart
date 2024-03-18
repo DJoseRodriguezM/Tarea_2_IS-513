@@ -1,37 +1,161 @@
 import 'package:flutter/material.dart';
-import 'package:pantalla_autentificacion/login_page.dart';
 
 class StartPage extends StatelessWidget {
-  StartPage({super.key});
-  LoginPageState cmon = LoginPageState();
+
+  const StartPage({Key? key,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Start Page'),
+      appBar: AppBar(
+        title: const Text('Bandeja de entrada'),
+        leading: IconButton(
+          icon: const Icon(Icons.menu),
+          onPressed: () {
+
+          },
         ),
-        body: const Center(
-          child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-              Icons.email,
-              size: 100,
-              color: Colors.blue,
-            ),
-            SizedBox(height: 20),
-            Text(
-              'Correo Electrónico:',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(20), 
+        children: [
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.grey,
+              foregroundColor: Colors.white,
+              minimumSize: const Size(double.infinity, 50),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
               ),
             ),
-            SizedBox(height: 10),
-            ]
+            onPressed: () {
+            },
+            child: const ListTile(
+              leading:  Icon(Icons.email),
+              title:  Text(
+                'David José Rodríguez',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+              subtitle:  Text(
+                'Asunto: Correo de Prueba',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
           ),
+
+          const SizedBox(height: 20),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.grey,
+              foregroundColor: Colors.white,
+              minimumSize: const Size(double.infinity, 50),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+            onPressed: () {
+            },
+            child: const ListTile(
+              leading:  Icon(Icons.email),
+              title:  Text(
+                'Carlos Martín Peña',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+              subtitle:  Text(
+                'Asunto: Correo de Prueba',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+
+          const SizedBox(height: 20),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.grey,
+              foregroundColor: Colors.white,
+              minimumSize: const Size(double.infinity, 50),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+            onPressed: () {
+            },
+            child: const  ListTile(
+              leading:  Icon(Icons.email),
+              title:  Text(
+                'David José Rodríguez',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+              subtitle:  Text(
+                'Asunto: Correo de Prueba',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+
+          const SizedBox(height: 20),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.grey,
+              foregroundColor: Colors.white,
+              minimumSize: const Size(double.infinity, 50),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+            onPressed: () {
+            },
+            child: const  ListTile(
+              leading:  Icon(Icons.email),
+              title:  Text(
+                'Carlos Martín Peña',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+              subtitle:  Text(
+                'Asunto: Correo de Prueba',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
+          
+          const SizedBox(height: 50),
+            Image.asset(
+              'assets/images/logo.png',
+              height: 80,
+              width: 80,
+          ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.grey,
+        onPressed: () {
+          // Action when button is pressed
+        },
+        child: const Icon(
+          Icons.edit,
+          color: Colors.black,
         ),
+      ),
     );
   }
 }
