@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 
-class RegisterPage extends StatelessWidget {
-  RegisterPage({super.key});
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({required key}) : super(key: key);
 
+  @override
+  RegisterPageState createState() => RegisterPageState();
+}
+
+class RegisterPageState extends State<RegisterPage> {
   final nameController = TextEditingController();
   final emailController = TextEditingController();
   final phoneController = TextEditingController();
   final passwordController = TextEditingController();
   final passwordconfirmController = TextEditingController();
 
+  bool isPasswordVisible = false;
   final formKey = GlobalKey<FormState>();
 
   @override
@@ -90,10 +96,20 @@ class RegisterPage extends StatelessWidget {
                       return null;
                     },
                     keyboardType: TextInputType.text,
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       labelText: 'Contraseña',
-                      icon: Icon(Icons.lock),
-                      border: OutlineInputBorder(),
+                      icon: const Icon(Icons.lock),
+                      border: const OutlineInputBorder(),
+                      suffixIcon: IconButton(
+                      icon: Icon(
+                        isPasswordVisible ? Icons.visibility_off : Icons.visibility,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          isPasswordVisible = !isPasswordVisible;
+                        });
+                      },
+                      ),
                     ),
                   ),
                   TextFormField(
@@ -106,10 +122,20 @@ class RegisterPage extends StatelessWidget {
                       return null;
                     },
                     keyboardType: TextInputType.text,
-                    decoration: const InputDecoration(
+                    decoration:  InputDecoration(
                       labelText: 'Confirmar contraseña',
-                      icon: Icon(Icons.lock),
-                      border: OutlineInputBorder(),
+                      icon: const Icon(Icons.lock),
+                      border: const OutlineInputBorder(),
+                      suffixIcon: IconButton(
+                      icon: Icon(
+                        isPasswordVisible ? Icons.visibility_off : Icons.visibility,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          isPasswordVisible = !isPasswordVisible;
+                        });
+                      },
+                      ),
                     ),
                   ),
                   const SizedBox(height: 20),

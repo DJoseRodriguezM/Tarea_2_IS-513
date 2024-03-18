@@ -3,4 +3,5 @@ enum MyRoutes {
   login,
   register,
   start,
+  email,
 }
